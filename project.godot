@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Tutorial_Project"
-run/main_scene="uid://cxcwxx30axdh"
+run/main_scene="uid://pp1djdehkgnu"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Assets/Scripts/game_manager.gd"
 
 [input]
 
@@ -43,6 +47,7 @@ move_down={
 2d_physics/layer_1="player"
 2d_physics/layer_9="ground"
 2d_physics/layer_10="one_way_ground"
+2d_physics/layer_17="Transitions"
 
 [rendering]
 

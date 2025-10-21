@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://di88kpb3r3edb" path="res://Assets/Sprites/platform1_large.png" id="1_patga"]
 
 [sub_resource type="Curve2D" id="Curve2D_xqbkt"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 26, -28, 0, 0, 0, 0, -28, -28)
+"points": PackedVector2Array(0, 0, 0, 0, 26, -28, 0, 0, 0, 0, 26, -139)
 }
 point_count = 2
 
