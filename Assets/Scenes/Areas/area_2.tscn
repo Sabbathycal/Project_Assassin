@@ -47,4 +47,16 @@ transtition = 0
 [node name="AreaExit" parent="." index="5"]
 position = Vector2(-56, -352)
 
+[node name="EnergyCell1" parent="EnergyCells" index="0"]
+position = Vector2(-99, -317)
+
+[node name="EnergyCell2" parent="EnergyCells" index="1"]
+position = Vector2(202, -252)
+
+[node name="EnergyCell3" parent="EnergyCells" index="2"]
+position = Vector2(399, -241)
+
+[node name="EnergyCell4" parent="EnergyCells" index="3"]
+position = Vector2(8, -127)
+
 [editable path="MovingPlatformLarge"]

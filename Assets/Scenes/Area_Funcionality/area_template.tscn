@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://cxcwxx30axdh"]
+[gd_scene load_steps=7 format=4 uid="uid://cxcwxx30axdh"]
 
 [ext_resource type="Texture2D" uid="uid://gds0f4ul86kx" path="res://Assets/Sprites/tiles_1.png" id="1_uidp5"]
 [ext_resource type="PackedScene" uid="uid://cj0lm1grwrbgm" path="res://Assets/Scenes/player.tscn" id="2_3uyhe"]
 [ext_resource type="PackedScene" uid="uid://trd3ehhrolma" path="res://Assets/Scenes/Area_Funcionality/area_exit.tscn" id="3_g42su"]
+[ext_resource type="PackedScene" uid="uid://bkqocewxofbs" path="res://Assets/Scenes/energy_cell.tscn" id="4_qf2lw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uyhe"]
 texture = ExtResource("1_uidp5")
@@ -342,4 +343,18 @@ collision_mask = 768
 speed = 5
 
 [node name="AreaExit" parent="." instance=ExtResource("3_g42su")]
-position = Vector2(62, -45)
+position = Vector2(-76, -48)
+
+[node name="EnergyCells" type="Node2D" parent="."]
+
+[node name="EnergyCell1" parent="EnergyCells" instance=ExtResource("4_qf2lw")]
+position = Vector2(54, -49)
+
+[node name="EnergyCell2" parent="EnergyCells" instance=ExtResource("4_qf2lw")]
+position = Vector2(26, -49)
+
+[node name="EnergyCell3" parent="EnergyCells" instance=ExtResource("4_qf2lw")]
+position = Vector2(39, -49)
+
+[node name="EnergyCell4" parent="EnergyCells" instance=ExtResource("4_qf2lw")]
+position = Vector2(11, -49)
