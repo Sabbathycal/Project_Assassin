@@ -21,4 +21,4 @@ func close():
 
 func _on_body_entered(body: Node2D) -> void:
 	if is_open && body is PlayerController:
-		GameManager._next_level()
+		GameManager._next_area()

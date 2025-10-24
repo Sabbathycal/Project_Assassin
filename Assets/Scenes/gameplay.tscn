@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo5bwrf15fdve"]
+
+[ext_resource type="PackedScene" uid="uid://cj0lm1grwrbgm" path="res://Assets/Scenes/player.tscn" id="1_0ti3t"]
+
+[node name="Gameplay" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_0ti3t")]
+collision_mask = 768
+speed = 4
+
+[node name="Area" type="Node2D" parent="." groups=["area_container"]]

@@ -10,6 +10,7 @@ class_name PlayerController
 
 @export var speed = 10
 @export var jump_power = 10
+@export var camera : Camera2D
 
 var speed_mult = 30.0
 var jump_mult = -30.0
@@ -41,5 +42,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * (speed * speed_mult)
 	else:
 		velocity.x = move_toward(velocity.x, 0, ((speed * speed_mult)))
-
 	move_and_slide()
+
+func teleport_to_location(new_location):
+	camera.position_smoothing_enabled = false
+	position = new_location
+	await get_tree().physics_frame
+	camera.position_smoothing_enabled = true
