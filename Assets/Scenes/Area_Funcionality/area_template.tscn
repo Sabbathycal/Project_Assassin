@@ -329,6 +329,7 @@ sources/0 = SubResource("TileSetAtlasSource_3uyhe")
 
 [node name="PlayerStartPosition" type="Node2D" parent="." groups=["player_start_position"]]
 z_index = -1
+position = Vector2(-38, -59)
 
 [node name="Background" type="TileMapLayer" parent="."]
 z_index = -1
