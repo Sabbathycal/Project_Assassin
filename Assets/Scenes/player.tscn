@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cj0lm1grwrbgm"]
+[gd_scene load_steps=12 format=3 uid="uid://cj0lm1grwrbgm"]
 
 [ext_resource type="Texture2D" uid="uid://bjehg1w5bsdo5" path="res://Assets/Sprites/player.png" id="1_6cd4h"]
 [ext_resource type="Script" uid="uid://dcrls1u3lp0iw" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Script" uid="uid://b2iyr7l6x5fls" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
+[ext_resource type="Script" uid="uid://crllt0e7ysih1" path="res://Assets/Scripts/health_bar.gd" id="4_t1xgp"]
 
 [sub_resource type="Animation" id="Animation_38rej"]
 length = 0.001
@@ -132,3 +133,10 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_7dd06")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_top = -40.0
+offset_right = 40.0
+script = ExtResource("4_t1xgp")
