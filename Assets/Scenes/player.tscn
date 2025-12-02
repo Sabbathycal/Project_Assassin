@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cj0lm1grwrbgm"]
+[gd_scene load_steps=14 format=3 uid="uid://cj0lm1grwrbgm"]
 
 [ext_resource type="Texture2D" uid="uid://bjehg1w5bsdo5" path="res://Assets/Sprites/player.png" id="1_6cd4h"]
 [ext_resource type="Script" uid="uid://dcrls1u3lp0iw" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Script" uid="uid://b2iyr7l6x5fls" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
-[ext_resource type="Script" uid="uid://crllt0e7ysih1" path="res://Assets/Scripts/health_bar.gd" id="4_t1xgp"]
+[ext_resource type="Texture2D" uid="uid://b7q7dqagf2wc7" path="res://Assets/Sprites/progressBar/progress bar most rounded under.png" id="4_w3t24"]
+[ext_resource type="Texture2D" uid="uid://coue7tdibwki3" path="res://Assets/Sprites/progressBar/progress bar most rounded over.png" id="5_c3tg1"]
+[ext_resource type="Texture2D" uid="uid://bcdgy5j1fkj11" path="res://Assets/Sprites/progressBar/progress bar most rounded progress red.png" id="6_lerqx"]
 
 [sub_resource type="Animation" id="Animation_38rej"]
 length = 0.001
@@ -130,13 +132,20 @@ texture = ExtResource("1_6cd4h")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = -4.0
+offset_top = -18.0
+offset_right = 28.0
+offset_bottom = -10.0
+scale = Vector2(0.28408164, 0.4045156)
+value = 100.0
+texture_under = ExtResource("4_w3t24")
+texture_over = ExtResource("5_c3tg1")
+texture_progress = ExtResource("6_lerqx")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_7dd06")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_top = -40.0
-offset_right = 40.0
-script = ExtResource("4_t1xgp")

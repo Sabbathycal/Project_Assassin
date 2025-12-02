@@ -7,8 +7,11 @@ var health: int = max_health
 @onready var healthbar = $CanvasLayer/TextureProgressBar
 
 func _ready():
-	healthbar.max_value = max_health
-	healthbar.value = health
+	if healthbar:
+		healthbar.max_value = max_health
+		healthbar.value = health
+	else:
+		print('Error: TextureProgressBar no encontrado (NODO)')
 	
 
 func take_damage(amount: int):
