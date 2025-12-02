@@ -27,7 +27,7 @@ func _ready():
 		healthbar.value = health
 	else:
 		print('Error: TextureProgressBar no encontrado (NODO)')
-	
+
 
 func take_damage(amount: int):
 	health = clamp(health - amount, 0, max_health)
@@ -66,6 +66,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, ((speed * speed_mult)))
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	if healthbar and camera:
+		var canvas_transform : Transform2D = camera.get_canvas_transform()
+		var inv_transform : Transform2D = canvas_transform.affine_inverse()
+		var screen_pos : Vector2 = inv_transform.basis_xform(position)
+
+		healthbar.position = screen_pos + Vector2(0, -40)
 
 func teleport_to_location(new_location):
 	camera.position_smoothing_enabled = false
