@@ -136,11 +136,11 @@ region_rect = Rect2(0, 0, 16, 16)
 layer = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_left = -4.0
-offset_top = -18.0
-offset_right = 28.0
-offset_bottom = -10.0
-scale = Vector2(0.28408164, 0.4045156)
+offset_left = -192.00002
+offset_top = -108.0
+offset_right = -160.00002
+offset_bottom = -100.0
+scale = Vector2(3.2070718, 3.209101)
 value = 100.0
 texture_under = ExtResource("4_w3t24")
 texture_over = ExtResource("5_c3tg1")

@@ -67,13 +67,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, ((speed * speed_mult)))
 	move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if healthbar and camera:
-		var canvas_transform : Transform2D = camera.get_canvas_transform()
-		var inv_transform : Transform2D = canvas_transform.affine_inverse()
-		var screen_pos : Vector2 = inv_transform.basis_xform(position)
+		#var canvas_transform : Transform2D = camera.get_canvas_transform()
+		#var inv_transform : Transform2D = canvas_transform.affine_inverse()
+		#var screen_pos : Vector2 = inv_transform.basis_xform(position)
 
-		healthbar.position = screen_pos + Vector2(0, -40)
+		healthbar.position = Vector2(10, 10)
+		#healthbar.visible = true
 
 func teleport_to_location(new_location):
 	camera.position_smoothing_enabled = false
