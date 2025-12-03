@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c26pyvip8mkyv"]
+[gd_scene load_steps=4 format=3 uid="uid://c26pyvip8mkyv"]
 
+[ext_resource type="Script" uid="uid://kxtq6gr1wrvs" path="res://Assets/Scripts/damage_platform.gd" id="1_chcfh"]
 [ext_resource type="Texture2D" uid="uid://cxlx6r4gs857i" path="res://Assets/Sprites/16-bit-spike-Sheet.png" id="1_rama4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chcfh"]
 size = Vector2(16, 13)
 
 [node name="DamagePlatform" type="Area2D"]
+script = ExtResource("1_chcfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rama4")
