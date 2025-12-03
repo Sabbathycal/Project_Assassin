@@ -20,6 +20,10 @@ var direction = 0
 var health: int = max_health
 
 @onready var healthbar = $CanvasLayer/TextureProgressBar
+@onready var game_over_label = $CanvasLayer/Control/GameOverLabel
+@onready var restart_button = $CanvasLayer/RestartButton
+
+var is_dead = false
 
 func _ready():
 	if healthbar:
@@ -27,6 +31,10 @@ func _ready():
 		healthbar.value = health
 	else:
 		print('Error: TextureProgressBar no encontrado (NODO)')
+	
+	#if restart_button:
+		#restart_button.visible = false
+		#restart_button.pressed.connect(_on_restart_button_pressed)
 
 
 func take_damage(amount: int):
@@ -38,9 +46,23 @@ func take_damage(amount: int):
 		
 
 func die():
-	print ('Player Died')
-	queue_free()
+	print('Player Died')
+	if game_over_label:
+		game_over_label.visible = true
+	
+	is_dead = true
 
+	if game_over_label:
+		game_over_label.visible = true
+	#if restart_button:
+		#restart_button.visible = true
+	
+	#queue_free()  # Remove this if you want to keep player node for showing game over
+
+
+#func _on_restart_button_pressed():
+	#var load_area = get_tree().get_first_node_in_group('game_manager')
+	#load_area.load_area(load_area.starting_area)
 
 func _input(event):
 		# Handle jump.
